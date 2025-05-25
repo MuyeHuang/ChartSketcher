@@ -39,18 +39,18 @@ SAVE_EVERY = 50
 MAX_DEPTH = 8
 MAX_CHILDREN = 3
 C_PUCT = 3.0
-LAMBDA_LEN = 0
+LAMBDA_LEN = 0                  # Used for penalizing/not penalizing node depth in UCB. If penalization is desired, set a small coefficient.
 SIMULATIONS_LIMIT = 15
 SUCCESS_LIMIT = 3
 EPSILON = 1e-8
 
 NEW_MODEL_ENDPOINT = "http://localhost:8000/v1/chat/completions"
-ROLLOUT_SERVER = "http://localhost:8000/v1/chat/completions"
+ROLLOUT_SERVER = "http://localhost:7000/v1/chat/completions"
 NEW_MODEL_NAME = "your/model/name"
 MAX_TOKENS = 1500
 DO_SAMPLE = True
 TEMPERATURE = 0.1
-HIGH_TEMP = 1.3
+HIGH_TEMP = 1.3                 # It is not recommended to set the value too high. Overly unstable sampling can easily harm performance.
 # ==============================
 # Drawing Related
 # ==============================
