@@ -206,7 +206,7 @@ def main():
 
         best_path = find_best_path(search_tree)
         if best_path:
-            # if random.random() <= 0.1: # This line is commented out in the original code
+            # if random.random() <= 0.1: 
             add_intermediate_node_sample(best_path, kto_samples)
 
     unique_samples = remove_duplicates(kto_samples)
