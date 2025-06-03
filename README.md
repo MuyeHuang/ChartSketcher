@@ -62,8 +62,7 @@ pip install ms-swift
 ## 📋 Features
 
 - 🎯 **Sketch-CoT Reasoning**: Visual annotation directly on charts
-- 🔄 **Multimodal Feedback**: Iterative refinement through visual grounding
-- 📊 **Chart-Specialized**: Optimized for complex chart understanding tasks
+- 📊 **Chart Expert Model**: Specifically optimized for complex chart understanding tasks while maintaining natural image capabilities
 - 🎓 **Two-Stage Training**: Cold start + reinforcement learning
 
 ## 🔗 Resources
