@@ -1,9 +1,9 @@
 # ChartSketcher: Reasoning with Multimodal Feedback and Reflection for Chart Understanding
 
-[[arXiv](https://img.shields.io/badge/arXiv-2505.19076-b31b1b.svg)]
-[[ModelScope](https://img.shields.io/badge/ModelScope-ChartSketcher--72B-blue)]
+[[arXiv](https://img.shields.io/badge/arXiv-2505.19076-b31b1b.svg)](https://arxiv.org/abs/2505.19076)
+[[ModelScope](https://img.shields.io/badge/ModelScope-ChartSketcher--72B-blue)](https://www.modelscope.cn/models/HUANGMUYE/ChartSketcher-72B)
 
-A multimodal feedback-driven step-by-step reasoning method for chart understanding, built on Qwen2VL with 72B parameters.
+A multimodal feedback-driven step-by-step reasoning method for chart understanding, built on Qwen2VL-72B with 72B parameters.
 
 ## 🚀 Quick Start
 
@@ -62,7 +62,8 @@ pip install ms-swift
 ## 📋 Features
 
 - 🎯 **Sketch-CoT Reasoning**: Visual annotation directly on charts
-- 📊 **Chart Expert Model**: Specifically optimized for complex chart understanding tasks while maintaining natural image capabilities
+- 🔄 **Multimodal Feedback**: Iterative refinement through visual grounding
+- 📊 **Chart-Specialized**: Optimized for complex chart understanding tasks
 - 🎓 **Two-Stage Training**: Cold start + reinforcement learning
 
 ## 🔗 Resources
