@@ -54,7 +54,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 vllm serve /my_chartsketcher \
 
 ```bash
 # Install ms-swift
-pip install ms-swift
+pip install ms-swift==3.2
 
 # Training data is being organized and will be uploaded soon
 ```
