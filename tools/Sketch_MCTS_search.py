@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import os
 import sys
 import math
@@ -21,9 +18,8 @@ from PIL import Image, ImageDraw, ImageColor
 import math
 import random
 random.seed(42)
-# ==============================
+
 # Config
-# ==============================
 
 TEST_JSON_PATH = "data/test_data.json"
 PNG_FOLDER = "data/images"
@@ -51,9 +47,8 @@ MAX_TOKENS = 1500
 DO_SAMPLE = True
 TEMPERATURE = 0.1
 HIGH_TEMP = 1.3                 # It is not recommended to set the value too high. Overly unstable sampling can easily harm performance.
-# ==============================
+
 # Drawing Related
-# ==============================
 
 class Entity:
     def __init__(self, entity_id, entity_type, *params):
@@ -239,9 +234,8 @@ class Scene:
         self.draw.line([x2, y2, left_x, left_y], fill=color, width=width)
         self.draw.line([x2, y2, right_x, right_y], fill=color, width=width)
 
-# ==============================
+
 # Utility Functions
-# ==============================
 
 def extract_pseudocode(text):
     pattern = re.compile(r"BEGIN(.*?)END", re.DOTALL)
@@ -484,9 +478,9 @@ def call_model_api(conversation, temperature=TEMPERATURE):
     except Exception as e:
         return f"[Error in call_model_api: {e}]"
 
-# ==============================
+
 # MCTSNode Definition
-# ==============================
+
 
 class MCTSNode:
     def __init__(self, conversation, depth=0, parent=None, label=None):
@@ -522,9 +516,8 @@ class MCTSNode:
         penalty = LAMBDA_LEN * (0.01 * self.depth + 0.3 * (math.exp(max(0, self.depth - 4) * 0.7) - 1))
         return (self.Q / (self.N + 1e-8)) + c_puct * math.sqrt(math.log(self.parent.N+1) / self.N) - penalty
 
-# ==============================
+
 # 1) Selection
-# ==============================
 
 def select_node(root):
     current = root
@@ -537,9 +530,9 @@ def select_node(root):
             return best_c
         current = best_c
 
-# ==============================
+
 # 2) Expansion
-# ==============================
+
 
 def expand_node(node):
     real_children_count = sum(not c.is_virtual for c in node.children)
@@ -700,9 +693,9 @@ def expand_node(node):
     if real_children_count >= MAX_CHILDREN:
         node.is_fully_expanded = True
 
-# ==============================
+
 # 3) Rollout
-# ==============================
+
 
 def rollout(node):
     if node.is_terminal or node.is_virtual:
@@ -766,9 +759,9 @@ def rollout(node):
 
     return 0, "[Depth limit reached in rollout]", sim_conv
 
-# ==============================
+
 # 4) Backprop
-# ==============================
+
 
 def backprop(node, reward):
     cur = node
@@ -778,9 +771,9 @@ def backprop(node, reward):
             cur.Q += reward
         cur = cur.parent
 
-# ==============================
+
 # Main Function: mcts_search
-# ==============================
+
 
 def mcts_search(root, simulations=20, success_limit=3):
     success_count = 0
@@ -832,9 +825,9 @@ def mcts_search(root, simulations=20, success_limit=3):
             best_child = c
     return best_child
 
-# ==============================
+
 # Parallel Processing Example
-# ==============================
+
 
 def serialize_tree(node):
     data = {
