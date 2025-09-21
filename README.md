@@ -5,6 +5,9 @@
 
 A multimodal feedback-driven step-by-step reasoning method for chart understanding, built on Qwen2VL-72B with 72B parameters.
 
+Our paper has been accepted to the NeurIPS 2025 main track. We are currently organizing the data, and all training data will be open-sourced within 2 weeks.
+Additionally, improved and more advanced versions of ChartSketcher are currently being trained.
+
 ## 🚀 Quick Start
 
 ### Model Download
