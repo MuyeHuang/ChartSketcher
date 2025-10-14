@@ -2,7 +2,7 @@
 
 [[arXiv](https://arxiv.org/abs/2505.19076)]
 [[Model-ModelScope](https://www.modelscope.cn/models/HUANGMUYE/ChartSketcher-72B)]
-[[Dataset-ModellScope](https://www.modelscope.cn/datasets/HUANGMUYE/ChartSketcher-Data)]
+[[Dataset-ModelScope](https://www.modelscope.cn/datasets/HUANGMUYE/ChartSketcher-Data)]
 [[Dataset-Huggingface](https://huggingface.co/datasets/MuyeHuang/ChartSketcher-Data)]
 
 A multimodal feedback-driven step-by-step reasoning method for chart understanding, built on Qwen2VL-72B with 72B parameters.
